@@ -1,0 +1,18 @@
+_BASE_: "../Base-RCNN-C4.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  MASK_ON: True
+  RESNETS:
+    DEPTH: 50
+  ROI_HEADS:
+    NUM_CLASSES: 1
+    NMS_THRESH_TEST: 0.25
+    SCORE_THRESH_TEST: 0.95
+DATASETS:
+  TRAIN: ("cow_topView_dataset_v6_train",)
+  TEST: ("cow_topView_dataset_v6_test",)
+SOLVER:
+  IMS_PER_BATCH: 5 #10 #6 #8 #4 #8
+  MAX_ITER: 50000 #30000 #5000 #6000 #3000 #had used 6000 for 117 images dataset, 40000 for 595 images dataset
+  STEPS: (4000, 15000, 20000, 30000, 45000) #Reduces BASE_LR by a factor of 10 at each step
+OUTPUT_DIR: '../models/detectron2_models/output_mask_rcnn_R_50_FPN_cow_tv/' 

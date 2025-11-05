@@ -1,0 +1,37 @@
+#torch files - checkpoints
+*.pth
+
+#anything in the non-code directories
+models/*
+data/*
+outputs/*
+
+#csv files
+*.csv
+
+#pickle files
+*.pkl
+*.p
+
+#image files
+*.png
+*.jpg
+*.bmp
+
+#thumbnails db files
+*.db
+
+#video files
+*.avi
+*.yuv
+*.mp4
+
+#log files
+*.log
+
+#pycache
+*__pycache__
+
+#yaml/yml files
+*.yml
+*.yaml

@@ -1,0 +1,452 @@
+maxStatDict:
+  distsFromMaskEdge:
+    center_back:
+    - center_back
+    hip_connector:
+    - hip_connector
+    left_hip_bone:
+    - left_hip_bone
+    left_pin_bone:
+    - left_pin_bone
+    left_shoulder:
+    - left_shoulder
+    right_hip_bone:
+    - right_hip_bone
+    right_pin_bone: []
+    right_shoulder:
+    - right_shoulder
+    tail_head:
+    - tail_head
+    withers:
+    - withers
+  fractional_lengths:
+    flen_hipCon_tailHead:
+    - tail_head
+    - hip_connector
+    flen_lhip_hipCon:
+    - left_hip_bone
+    - hip_connector
+    flen_lpin_tailHead:
+    - left_pin_bone
+    - tail_head
+    flen_lshldr_withers:
+    - left_shoulder
+    - withers
+    flen_rhip_hipCon:
+    - right_hip_bone
+    - hip_connector
+    flen_rpin_tailHead:
+    - right_pin_bone
+    - tail_head
+    flen_rshldr_withers:
+    - withers
+    - right_shoulder
+    flen_withers_cback:
+    - withers
+    - center_back
+    flen_withers_hipCon:
+    - withers
+    - hip_connector
+  hipBones_cback:
+    angles:
+      angDev_hipBones_hcon_at_thead:
+      - hip_connector
+      - tail_head
+      ang_lhip_cback_hcon:
+      - center_back
+      - left_hip_bone
+      - hip_connector
+      ang_rhip_cback_hcon:
+      - center_back
+      - hip_connector
+      - right_hip_bone
+  hipBones_hcon:
+    angles:
+      angDev_hipBones_thead_at_hcon:
+      - hip_connector
+      - tail_head
+      ang_lhip_hcon_rhip:
+      - left_hip_bone
+      - hip_connector
+      - right_hip_bone
+      ang_lhip_hcon_thead:
+      - left_hip_bone
+      - hip_connector
+      - tail_head
+      ang_rhip_hcon_thead:
+      - hip_connector
+      - right_hip_bone
+      - tail_head
+    lengths:
+      lenDev_hipBOnes_hcon:
+      - hip_connector
+      len_lhip_hcon:
+      - left_hip_bone
+      - hip_connector
+      len_rhip_hcon:
+      - hip_connector
+      - right_hip_bone
+  hipBones_pinBones:
+    angles:
+      ang_lhip_hcon_lpin:
+      - left_hip_bone
+      - hip_connector
+      - left_pin_bone
+      ang_lhip_lpin_thead:
+      - left_hip_bone
+      - left_pin_bone
+      - tail_head
+      ang_rhip_hcon_rpin:
+      - hip_connector
+      - right_hip_bone
+      - right_pin_bone
+      ang_rhip_rpin_thead:
+      - right_hip_bone
+      - tail_head
+      - right_pin_bone
+    lengths:
+      lenDev_hips_pins:
+      - left_pin_bone
+      - right_pin_bone
+      - left_hip_bone
+      - right_hip_bone
+      len_lhip_lpin:
+      - left_hip_bone
+      - left_pin_bone
+      len_rhip_rpin:
+      - right_hip_bone
+      - right_pin_bone
+  hipBones_shldrs:
+    angles:
+      angDev_hipBones_shldrs_at_cback:
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      angDev_hipBones_withers_at_shldrs:
+      - withers
+      - left_shoulder
+      - right_shoulder
+      ang_lhip_cback_lshldr:
+      - left_shoulder
+      - center_back
+      - left_hip_bone
+      ang_lhip_lshldr_withers:
+      - left_shoulder
+      - withers
+      - left_hip_bone
+      ang_rhip_cback_rshldr:
+      - right_shoulder
+      - center_back
+      - right_hip_bone
+      ang_rhip_rshldr_withers:
+      - withers
+      - right_shoulder
+      - right_hip_bone
+  pinBones_hcon:
+    angles:
+      angDev_pinBones_thead_at_hcon:
+      - hip_connector
+      - tail_head
+      ang_lpin_hcon_rpin:
+      - hip_connector
+      - left_pin_bone
+      - right_pin_bone
+      ang_lpin_hcon_thead:
+      - hip_connector
+      - left_pin_bone
+      - tail_head
+      ang_rpin_hcon_thead:
+      - hip_connector
+      - tail_head
+      - right_pin_bone
+    lengths:
+      lenDev_pinBones_hcon:
+      - hip_connector
+      len_lpin_hcon:
+      - hip_connector
+      - left_pin_bone
+      len_rpin_hcon:
+      - hip_connector
+      - right_pin_bone
+  shldrs_pinBones:
+    angles:
+      ang_lshldr_cback_lpin:
+      - left_shoulder
+      - center_back
+      - left_pin_bone
+      ang_rshldr_cback_rpin:
+      - right_shoulder
+      - center_back
+      - right_pin_bone
+  shldrs_withers:
+    angles:
+      angDev_shldrs_withers_at_cback:
+      - withers
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      ang_lshldr_cback_rshldr:
+      - left_shoulder
+      - right_shoulder
+      - center_back
+      ang_lshldr_cback_withers:
+      - left_shoulder
+      - withers
+      - center_back
+      ang_lshldr_withers_rshldr:
+      - left_shoulder
+      - withers
+      - right_shoulder
+      ang_rshldr_cback_withers:
+      - withers
+      - right_shoulder
+      - center_back
+    lengths:
+      lenDev_shldrs_cback:
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      len_lshldr_cback:
+      - left_shoulder
+      - center_back
+      len_rshldr_cback:
+      - right_shoulder
+      - center_back
+  spinePoints:
+    angles:
+      ang_cback_hcon_thead:
+      - center_back
+      - hip_connector
+      - tail_head
+      ang_witr_cback_hcon:
+      - center_back
+      - hip_connector
+      ang_witr_hcon_thead:
+      - hip_connector
+      - tail_head
+minStatDict:
+  distsFromMaskEdge:
+    center_back:
+    - center_back
+    hip_connector:
+    - hip_connector
+    left_hip_bone:
+    - left_hip_bone
+    left_pin_bone:
+    - left_pin_bone
+    left_shoulder:
+    - left_shoulder
+    right_hip_bone:
+    - right_hip_bone
+    right_pin_bone: []
+    right_shoulder:
+    - right_shoulder
+    tail_head:
+    - tail_head
+    withers:
+    - withers
+  fractional_lengths:
+    flen_hipCon_tailHead:
+    - tail_head
+    - hip_connector
+    flen_lhip_hipCon:
+    - left_hip_bone
+    - hip_connector
+    flen_lpin_tailHead:
+    - left_pin_bone
+    - tail_head
+    flen_lshldr_withers:
+    - left_shoulder
+    - withers
+    flen_rhip_hipCon:
+    - right_hip_bone
+    - hip_connector
+    flen_rpin_tailHead:
+    - right_pin_bone
+    - tail_head
+    flen_rshldr_withers:
+    - withers
+    - right_shoulder
+    flen_withers_cback:
+    - withers
+    - center_back
+    flen_withers_hipCon:
+    - withers
+    - hip_connector
+  hipBones_cback:
+    angles:
+      angDev_hipBones_hcon_at_thead:
+      - hip_connector
+      - tail_head
+      ang_lhip_cback_hcon:
+      - center_back
+      - left_hip_bone
+      - hip_connector
+      ang_rhip_cback_hcon:
+      - center_back
+      - hip_connector
+      - right_hip_bone
+  hipBones_hcon:
+    angles:
+      angDev_hipBones_thead_at_hcon:
+      - hip_connector
+      - tail_head
+      ang_lhip_hcon_rhip:
+      - left_hip_bone
+      - hip_connector
+      - right_hip_bone
+      ang_lhip_hcon_thead:
+      - left_hip_bone
+      - hip_connector
+      - tail_head
+      ang_rhip_hcon_thead:
+      - hip_connector
+      - right_hip_bone
+      - tail_head
+    lengths:
+      lenDev_hipBOnes_hcon:
+      - hip_connector
+      len_lhip_hcon:
+      - left_hip_bone
+      - hip_connector
+      len_rhip_hcon:
+      - hip_connector
+      - right_hip_bone
+  hipBones_pinBones:
+    angles:
+      ang_lhip_hcon_lpin:
+      - left_hip_bone
+      - hip_connector
+      - left_pin_bone
+      ang_lhip_lpin_thead:
+      - left_hip_bone
+      - left_pin_bone
+      - tail_head
+      ang_rhip_hcon_rpin:
+      - hip_connector
+      - right_hip_bone
+      - right_pin_bone
+      ang_rhip_rpin_thead:
+      - right_hip_bone
+      - tail_head
+      - right_pin_bone
+    lengths:
+      lenDev_hips_pins:
+      - left_pin_bone
+      - right_pin_bone
+      - left_hip_bone
+      - right_hip_bone
+      len_lhip_lpin:
+      - left_hip_bone
+      - left_pin_bone
+      len_rhip_rpin:
+      - right_hip_bone
+      - right_pin_bone
+  hipBones_shldrs:
+    angles:
+      angDev_hipBones_shldrs_at_cback:
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      angDev_hipBones_withers_at_shldrs:
+      - withers
+      - left_shoulder
+      - right_shoulder
+      ang_lhip_cback_lshldr:
+      - left_shoulder
+      - center_back
+      - left_hip_bone
+      ang_lhip_lshldr_withers:
+      - left_shoulder
+      - withers
+      - left_hip_bone
+      ang_rhip_cback_rshldr:
+      - right_shoulder
+      - center_back
+      - right_hip_bone
+      ang_rhip_rshldr_withers:
+      - withers
+      - right_shoulder
+      - right_hip_bone
+  pinBones_hcon:
+    angles:
+      angDev_pinBones_thead_at_hcon:
+      - hip_connector
+      - tail_head
+      ang_lpin_hcon_rpin:
+      - hip_connector
+      - left_pin_bone
+      - right_pin_bone
+      ang_lpin_hcon_thead:
+      - hip_connector
+      - left_pin_bone
+      - tail_head
+      ang_rpin_hcon_thead:
+      - hip_connector
+      - tail_head
+      - right_pin_bone
+    lengths:
+      lenDev_pinBones_hcon:
+      - hip_connector
+      len_lpin_hcon:
+      - hip_connector
+      - left_pin_bone
+      len_rpin_hcon:
+      - hip_connector
+      - right_pin_bone
+  shldrs_pinBones:
+    angles:
+      ang_lshldr_cback_lpin:
+      - left_shoulder
+      - center_back
+      - left_pin_bone
+      ang_rshldr_cback_rpin:
+      - right_shoulder
+      - center_back
+      - right_pin_bone
+  shldrs_withers:
+    angles:
+      angDev_shldrs_withers_at_cback:
+      - withers
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      ang_lshldr_cback_rshldr:
+      - left_shoulder
+      - right_shoulder
+      - center_back
+      ang_lshldr_cback_withers:
+      - left_shoulder
+      - withers
+      - center_back
+      ang_lshldr_withers_rshldr:
+      - left_shoulder
+      - withers
+      - right_shoulder
+      ang_rshldr_cback_withers:
+      - withers
+      - right_shoulder
+      - center_back
+    lengths:
+      lenDev_shldrs_cback:
+      - center_back
+      - left_shoulder
+      - right_shoulder
+      len_lshldr_cback:
+      - left_shoulder
+      - center_back
+      len_rshldr_cback:
+      - right_shoulder
+      - center_back
+  spinePoints:
+    angles:
+      ang_cback_hcon_thead:
+      - center_back
+      - hip_connector
+      - tail_head
+      ang_witr_cback_hcon:
+      - center_back
+      - hip_connector
+      ang_witr_hcon_thead:
+      - hip_connector
+      - tail_head

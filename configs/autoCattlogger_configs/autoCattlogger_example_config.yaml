@@ -1,0 +1,38 @@
+#All paths must be relative to top level directory.
+detectron2:
+  device: 0
+  model_config_path: "./configs/detectron2_configs/COW-InstanceSegmentation/mask_rcnn_R_50_C4_cow_tv.yaml"
+  MODEL_ROI_HEADS_SCORE_THRESH_TEST: 0.5
+  weights_path: "./models/detectron2_models/maskRCNN_kpDatasetv6_orbbec2025_model_final.pth"
+
+mmpose:
+  useMMPOSE: True
+  device: "cuda:0"
+  mmpose_poseConfigPath: "./configs/mmpose_configs/trainer_config/td-hm_hrnet-w48_udp-8xb32-210e_coco-256x192_cow-tv_orbbecCam2025.py"
+  mmpose_modelWeightsPath: "./models/mmpose_models/epoch_210_kpDatasetV5_2024.pth" # Orbbec cam 2025 - kp_dataset_v6
+
+AutoCattlogger:
+  cowAspRatio_ulim: 0.53  # to get almost full body images, no images with just partial cow body visible - ulim = upper limit
+  cowAreaRatio_llim: 0.042 #0.121 #to reject very small detections as they could not be cows #llim = lower limit #0.121 for all holding area videos #0.042 for OpenBarn2024
+
+  # BMLP
+  colorCorrectionOn: False  # True #False
+  blackPointImgPth: f"./models/dairyIllumination_models/extendedBlkPtImg_normConvGaussian_kernelSize-301_6116.bmp" #NCG - BlackMirror Light Probes Paper?
+  externalCC_fn: None #uses BMLP, You can pass in your own color correction function here. Do it directly in the python code if you are interested.
+  threshVal_CC: None #the threshval is set automatically (hard coded value is applied) for our CC method
+
+
+  # save hard examples to be used for augmenting the keypoint detector training set
+  saveHardExamples: False  # Saves hard examples for keypoint detector retraining 
+  saveEasyExamples: False  # Saves easy examples for keypoint detector retraining
+  keypointCorrectionOn: True  # False #True - always set this to True unless you are trying to replicate EI2023 results
+
+  # Selecting bounds for initial check
+  useHandCraftedKPRuleLimits: True # Uses RC1 for initial (and final) check. If false, uses RC2 for all checks.
+
+  # Stats dict for keypoint rules checker 2 (See SURABHI paper)
+  affectedKPsDictPath: "./models/keypointStat_models/datasetKpStatsDict_kp_dataset_v4_train_affectedKPs.yml"
+  datasetKpStatsDictPath: "./models/keypointStat_models/datasetKpStatsDict_kp_dataset_v4_train.p"
+
+  #others
+  printDebugInfoToScreen: False # Turn it off as you can read it from the log file

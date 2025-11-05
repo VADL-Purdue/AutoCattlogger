@@ -1,0 +1,9 @@
+[submodule "dependencies/opencv_srgb_gamma"]
+	path = dependencies/opencv_srgb_gamma
+	url = https://github.com/PetterS/opencv_srgb_gamma.git
+[submodule "dependencies/detectron2"]
+	path = dependencies/detectron2
+	url = https://github.com/facebookresearch/detectron2.git
+[submodule "dependencies/mmpose"]
+	path = dependencies/mmpose
+	url = https://github.com/open-mmlab/mmpose.git

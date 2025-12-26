@@ -100,12 +100,13 @@ pip install -v -e .
 ### Training
 You can skip this step if you choose to download our weights.
   - To download our weights on a desktop with a GUI web browser, [click here](https://app.box.com/shared/static/0lh7opyprerc10rhw660bealryyltumq.pth).
+    - Create a folder called mmpose_models in the [models folder](../models/).
+    - Copy our weights into the [mmpose_models folder](../models/mmpose_models/).
   - To download it using cli, run this command
       ```
       mkdir ../models/mmpose_models #create a folder for saving the weights
       curl -L https://app.box.com/shared/static/0lh7opyprerc10rhw660bealryyltumq.pth --output ../models/mmpose_models/epoch_210_kpDatasetV5_2024.pth
       ```
-  - Copy our weights into the [mmpose_models folder](../models/mmpose_models/).
 
 Training steps:
 - Start the training with the provided training script and the config file in the configs folder. An example is shown below.

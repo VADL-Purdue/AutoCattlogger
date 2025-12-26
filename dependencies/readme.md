@@ -11,12 +11,13 @@ Detectron2 works inside our supplied docker container. However, if you choose to
 
 If you choose to download our weights, you can skip the training.
   - To download our weights on a desktop with GUI web browser, [click here](https://app.box.com/s/aa8cu8cv0pszhj64446yiim9dtpkjs6h).
+    - Create a folder called 'detectron2_models' in the [models folder](../models/).
+    - After that, copy our weights into the [detectron2_models folder](../models/detectron2_models/).
   - To download it using cli, run this command
       ```
       mkdir ../models/detectron2_models #create a folder for saving the weights
       curl -L  https://app.box.com/shared/static/aa8cu8cv0pszhj64446yiim9dtpkjs6h --output ../models/detectron2_models/maskRCNN_kpDatasetv6_orbbec2025_model_final.pth
       ```
-  - Copy our weights into the [detectron2_models folder](../models/detectron2_models/).
 
 
 ### Train the mask detector

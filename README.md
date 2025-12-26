@@ -50,6 +50,7 @@ This repository has code built on ideas presented in the following papers:
 
 
 - Complete setting up the environment by following the instructions in the [setup readme file](./setup/readme.md).
+- Download our pretrained model weights by following the downloading instructions in the [models readme file](./models/readme.md).
 - Training: Generate the cattlogs from at least two sets of videos (for training and eval):
     ```
     python generateCattlogs.py -c ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml -s ./data/sampleVideos1/ -g ./data/annotations/annotations1.csv -o ./outputs/ac_outputs_1/

@@ -135,3 +135,5 @@ Other publications from our lab can be found here: [https://engineering.purdue.e
 
 ### Other details
 - The data used for this research was collected under IACUC 1803001704.
+
+![AutoCattlogger AutoCattle ID Logo.](./docs/assets/AC%20Logo.png)

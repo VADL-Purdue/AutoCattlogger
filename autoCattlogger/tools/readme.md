@@ -65,7 +65,7 @@ We recommend that you generate new bounds and use them regardless of you setting
 
 The outputs from the AutoCattlogger is made more interpretable by attaching the ground truth labels to tracks and barcodes. To do this, the [generateCattlogs.py](../../generateCattlogs.py) script requires a ground truth CSV file with a column containing the cowIDs in the same order in which the cows appear in the scene.
 
-If you do not have this order information, or if you need to correct errors in the order, the cow-matcher GUI tool could be very useful. Please read the [readme file]() in the cow-matcher directory for more information about how to use it.
+If you do not have this order information, or if you need to correct errors in the order, the cow-matcher GUI tool could be very useful. Please read the [readme file](./cow_matcher/README.MD) in the [cow-matcher directory](./cow_matcher/) for more information about how to use it.
 
 You can use the cow matcher to generate an order-correct list of cowIDs in a CSV file and then feed the CSV file to the [generateCattlogs.py](../../generateCattlogs.py) script with the -g option to attach the ground truth labels (cowIDs) to the tracks, sample-cropped-images, and the cattlogs.
 

@@ -7,3 +7,6 @@
 [submodule "dependencies/mmpose"]
 	path = dependencies/mmpose
 	url = https://github.com/open-mmlab/mmpose.git
+[submodule "autoCattlogger/tools/cow_matcher"]
+	path = autoCattlogger/tools/cow_matcher
+	url = https://github.com/VADL-Purdue/cow_matcher

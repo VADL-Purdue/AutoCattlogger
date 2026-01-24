@@ -31,9 +31,9 @@ This repository has code to run the AutoCattlogger, AutoCattleID, and some suppl
 
 
 This repository has code built on ideas presented in the following papers:
-> - [Eidetic recognition of cattle using keypoint alignment](https://library.imaging.org/ei/articles/35/7/IMAGE-279): Introduced barcode based cattle identification (the cows themselves are converted to barcodes, we do not stick barcodes on cows), keypoints for pose correction, and keypoint interpolation.
+> - [Eidetic recognition of cattle using keypoint alignment](https://library.imaging.org/ei/articles/35/7/IMAGE-279): Introduced barcode based cattle identification (the cows themselves are converted to barcodes, we do not stick barcodes on cows), keypoints for pose correction, and keypoint interpolation. [Presentation video link.](https://youtu.be/DPQ42vkXOgU)
 > - [SURABHI: Self-Training Using Rectified Annotations-Based Hard Instances for Eidetic Cattle Recognition](https://www.mdpi.com/1424-8220/24/23/7680): Introduced error-detection and error-correction algorithms to handle keypoint-detection errors.
-> - [Black-mirror light-probe cow model for specular highlight removal to improve Holstein cattle identification](): Introduced scene-illumination modeling using fully black cows for color-correction. Color-correction improves the quality of the generated barcodes.
+> - [Black-mirror light-probe cow model for specular highlight removal to improve Holstein cattle identification](): Introduced scene-illumination modeling using fully black cows for color-correction. Color-correction improves the quality of the generated barcodes. [Presentation video link.](https://youtu.be/Ss9M-uAg-rY)
 > - [AutoCattlogger: Track-assisted, automatic, instant cattle identity cataloger for recognition and beyond](https://www.sciencedirect.com/science/article/pii/S2772375525007920): Introduced tracking of individual cows, and selective picking of instances to create the averaged barcode. This automated the whole procedure.
 
 
@@ -137,3 +137,4 @@ Other publications from our lab can be found here: [https://engineering.purdue.e
 - The data used for this research was collected under IACUC 1803001704.
 
 ![AutoCattlogger AutoCattle ID Logo.](./docs/assets/AC%20Logo.png)
+

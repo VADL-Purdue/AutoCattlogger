@@ -53,9 +53,9 @@ This repository has code built on ideas presented in the following papers:
 - Download our pretrained model weights by following the downloading instructions in the [models readme file](./models/readme.md).
 - Training: Generate the cattlogs from at least two sets of videos (for training and eval):
     ```
-    python generateCattlogs.py -c ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml -s ./data/sampleVideos1/ -g ./data/annotations/annotations1.csv -o ./outputs/ac_outputs_1/
+    python generateCattlogs.py -c ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml -s ./data/sampleVideos1/ -g ./data/sampleVideos1/sampleVideos1_gtLabels_inOrder.csv -o ./outputs/ac_outputs_1/
 
-    python generateCattlogs.py -c ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml -s ./data/sampleVideos2/ -g ./data/annotations/annotations2.csv -o ./outputs/ac_outputs_2/
+    python generateCattlogs.py -c ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml -s ./data/sampleVideos2/ -g ./data/sampleVideos2/sampleVideos2_gtLabels_inOrder.csv -o ./outputs/ac_outputs_2/
     ```
     - Use the help flag to list all available options.
         ```

@@ -57,15 +57,16 @@ class CattlogGenerator():
             print(f"Attaching GT labels to tracks, bitVectorCattlog, and sampleCropImages")
 
             tracksList = pickle.load(open(f'{videosOutDir}/requiredTracks.pkl', 'rb'))
-            sampleCropImgsDir= f"{videosOutDir}/autoCattlog_sampleCrops" #must not have ending '/'
-            bitVecCattlogPath = f"{videosOutDir}/cowDataMatDict_autoCattlogMultiCow_blk16{'_CC' if self.colorCorrectionOn else ''}.p"
+            # sampleCropImgsDir= f"{videosOutDir}/autoCattlog_sampleCrops" #must not have ending '/'
+            sampleCropImgsDir= f"{videosOutDir}/autoCattlog_sampleCrops_fromRequiredTracks" #must not have ending '/'
+            bitVecCattlogPath = f"{videosOutDir}/cowDataMatDict_autoCattlogMultiCow_blk16{'_CC' if self.ac_config['AutoCattlogger']['colorCorrectionOn'] else ''}.p"
 
             tracksWithGTLabels, bvCattlogWithGTLabels = attachGTLabels(gtLabelsCSV_path=gtLabelsCSV_path, tracksList=tracksList, saveDir=videosOutDir, sampleCropImgsDir=sampleCropImgsDir, bitVecCattlogPath=bitVecCattlogPath)
             
 
             #CREATE CATTLOG IMAGES FROM BIT VECTORS
             print(f"Creating cattlog images from bit vectors")
-            createCattlogImages_fromBitVectors(bvCattlogWithGTLabels, outDir=f"{videosOutDir}/pixBinImages_withGTLabels{'_CC' if self.colorCorrectionOn else ''}")
+            createCattlogImages_fromBitVectors(bvCattlogWithGTLabels, outDir=f"{videosOutDir}/pixBinImages_withGTLabels{'_CC' if self.ac_config['AutoCattlogger']['colorCorrectionOn'] else ''}")
 
 
             #GET AUTO CUTS INFO

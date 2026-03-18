@@ -6,9 +6,9 @@ Author: Manu Ramesh
 Follow these steps to train and run the AutoCattlogger and AutoCattleID on custom data. 
 
 ## Steps
-- **Data Collection and annotation:** Collect a few sample images of cows from your data (around 20-30), and annotate them with cow masks and 10 keypoints per cow. You can follow instructions **in this video** for help with annotations.
+- **Data Collection and annotation:** Collect a few sample images of cows from your data (around 20-30), and annotate them with cow masks and 10 keypoints per cow. You can follow instructions in these video for help with annotations. [Video 1 Link](https://www.youtube.com/watch?v=7xDOEP2Kf-4) | [Video 2 Link](https://www.youtube.com/watch?v=LLXQuWY0UB4).
 
-- **Training detectors:** Append our dataset of nearly a 1000 images with your data samples and train the mask (maskRCNN) and keypoint (HRNet) detector models following instructions in the [readme in the dependecies folder](../dependencies/readme.md).
+- **Training detectors:** Append our dataset of nearly a 500 images ([downloading instructions here](../data/readme.md)) with your data samples and train the mask (maskRCNN) and keypoint (HRNet) detector models following instructions in the [readme in the dependecies folder](../dependencies/readme.md).
 
 - **Obtain shape statistics:** Obtain the cow-shape statistics (bounds for rules checker2) by running the [computeLimitsForRulesChecker](../autoCattlogger/tools/computeLimitsForRulesChecker.py) as per instructions in the [tools readme file](../autoCattlogger/tools/readme.md) from your new keypoints dataset and save it in the [models directory](../models/keypointStat_models/). You can skip this step if your data looks similar to our data.
 
@@ -16,7 +16,7 @@ Follow these steps to train and run the AutoCattlogger and AutoCattleID on custo
 
 - **Procure ground-truth cow-labels:** Create a CSV file with a list of cowIDs (ear-tag numbers) in the same order in which the cows appear in the scene. You can skip and revisit this step in case you are unable to determine the perfect order in which the cows have walked. 
 
-- **Arrange your top-view cow-videos:** Arrange all videos of cows on which you wish to run the AutoCattlogger into a folder. Make sure to name the videos alphabetically so they sort correctly for the AutoCattlgger to process them in the correct order.
+- **Arrange your top-view cow-videos:** Arrange all videos of cows on which you wish to run the AutoCattlogger into a folder. Make sure to name the videos alphabetically so they sort correctly for the AutoCattlgger to process them in the correct (chronological) order.
 
 - **Run the AutoCattlogger on the videos:** Follow instructions in the [main readme file](../README.md) to generate the cattlog and track outputs. If you do not have the ground-truth labels csv file, you can use the initial autoCattlogger video outputs to help you find the correct order of apperance of cows. You can rerun the cattlog generation code with the -g option to attach the ground-truth labels to the already generated cattlog (this will not reprocess the videos). 
 

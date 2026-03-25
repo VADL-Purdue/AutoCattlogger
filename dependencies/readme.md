@@ -111,7 +111,7 @@ You can skip this step if you choose to download our weights.
 Training steps:
 - Start the training with the provided training script and the config file in the configs folder. An example is shown below.
   ```
-  python mmpose/tools/train.py ../configs/mmpose_configs/trainer_config/td-hm_hrnet-w48_udp-8xb32-210e_coco-256x192_cow-tv_orbbecCam2025.py --work-dir ../../models/mmpose_models/cow_tv_hrnet_keypoint_detector/ --resume
+  python mmpose/tools/train.py ../configs/mmpose_configs/trainer_config/td-hm_hrnet-w48_udp-8xb32-210e_coco-256x192_cow-tv_orbbecCam2025.py --work-dir ../models/mmpose_models/cow_tv_hrnet_keypoint_detector/ --resume
   ```
 - Use the --help option for more information about available training options.
   ```

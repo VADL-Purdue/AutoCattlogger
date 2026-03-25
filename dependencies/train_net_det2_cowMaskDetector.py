@@ -57,9 +57,9 @@ from detectron2.data.datasets import register_coco_instances
 ##################### REGISTER CUSTOM DATASETS HERE ##############################################
 
 
-#For Orbbec Camera data (also has images from OpenBarn2024 Data)
-register_coco_instances("cow_topView_dataset_v6_train", {}, "../data/kp_dataset_v6/annotations/kp_dataset_v6_train.json", "../data/kp_dataset_v6/images/images_train")
-register_coco_instances("cow_topView_dataset_v6_test", {}, "../data/kp_dataset_v6/annotations/kp_dataset_v6_test.json", "../data/kp_dataset_v6/images/images_test")
+# The VADL_PurdueCowsDataset (train and test)
+register_coco_instances("VADL_PurdueCowsDataset_train", {}, "../data/VADL_PurdueCowsDataset_train/annotations/VADL_PurdueCowsDataset_train.json", "../data/VADL_PurdueCowsDataset_train/images/")
+register_coco_instances("VADL_PurdueCowsDataset_test", {}, "../data/VADL_PurdueCowsDataset_test/annotations/VADL_PurdueCowsDataset_test.json", "../data/VADL_PurdueCowsDataset_test/images/")
 
 
 ##################################################################################################
@@ -107,10 +107,10 @@ keypoint_connection_rules = \
  (kpn[9-1], kpn[10-1], (64, 128, 255) )]
 
 
-#setting metadata catalog - Manu
+#setting metadata catalog - Manu 
+# You can add more datasets to the customDatasetsList here (but set paths to their images and annotation json files above using the register_coco_instances() fn first)
 customDatasetsList =  []
-customDatasetsList += ["cow_topView_dataset_v5_train", "cow_topView_dataset_v5_test"]
-customDatasetsList += ["cow_topView_dataset_v6_train", "cow_topView_dataset_v6_test"]
+customDatasetsList += ["VADL_PurdueCowsDataset_train", "VADL_PurdueCowsDataset_test"]
 
 for customDataset in customDatasetsList:
     MetadataCatalog.get(customDataset).keypoint_names = keypoint_names

@@ -128,7 +128,8 @@ model = dict(
 # base dataset settings
 dataset_type = CocoDataset #CowTvKeypointsDataset #CowTvKeypointsDataset2 #CowTvKeypointsDataset #CocoDataset
 data_mode = 'topdown' #'bottomup' #'topdown' #bottom up not compatible with our dataset
-data_root = '../data/kp_dataset_v6/'  #'data/coco/'
+# data_root = '../data/kp_dataset_v6/'  #'data/coco/'
+data_root = '../data/'  #'data/coco/'
 
 backend_args = dict(backend='local')
 
@@ -160,9 +161,9 @@ train_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_mode=data_mode,
-        ann_file='annotations/kp_dataset_v6_train.json',  #'annotations/person_keypoints_train2017.json',
+        ann_file='VADL_PurdueCowsDataset_train/annotations/VADL_PurdueCowsDataset_train.json',  #'annotations/person_keypoints_train2017.json',
         #ann_file='annotations/kp_dataset_v6_test.json',  #'annotations/person_keypoints_train2017.json',
-        data_prefix=dict(img='images/images_train/'),  #dict(img='train2017/'),
+        data_prefix=dict(img='VADL_PurdueCowsDataset_train/images/'),  #dict(img='train2017/'),
         #data_prefix=dict(img='images/images_test/'),  #dict(img='train2017/'),
         pipeline=train_pipeline,
         # metainfo=dict(from_file='configs/_base_/datasets/cow_tv_keypoints.py'), # from https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_datasets.html
@@ -179,7 +180,7 @@ val_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_mode=data_mode,
-        ann_file='annotations/kp_dataset_v6_test.json', #'annotations/person_keypoints_val2017.json',
+        ann_file='VADL_PurdueCowsDataset_test/annotations/VADL_PurdueCowsDataset_test.json', #'annotations/person_keypoints_val2017.json',
 
         bbox_file=None, #from https://mmpose.readthedocs.io/en/latest/faq.html
         #bbox_file='COCO_val2017_detections_AP_H_56_person.json', #from https://mmpose.readthedocs.io/en/latest/faq.html
@@ -187,7 +188,7 @@ val_dataloader = dict(
         #bbox_file= 'data/coco/person_detection_results/'
         #'COCO_val2017_detections_AP_H_56_person.json', #results in Key error
 
-        data_prefix=dict(img='images/images_test/'), #dict(img='val2017/'),
+        data_prefix=dict(img='VADL_PurdueCowsDataset_test/images/'), #dict(img='val2017/'),
         test_mode=True,
         pipeline=val_pipeline,
         # metainfo=dict(from_file='configs/_base_/datasets/cow_tv_keypoints.py'), # from https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_datasets.html
@@ -199,7 +200,7 @@ test_dataloader = val_dataloader
 val_evaluator = dict(
     type=CocoMetric,
     #ann_file=data_root + 'annotations/person_keypoints_val2017.json'
-    ann_file=data_root + 'annotations/kp_dataset_v6_test.json'
+    ann_file=data_root + 'VADL_PurdueCowsDataset_test/annotations/VADL_PurdueCowsDataset_test.json'
     )
 test_evaluator = val_evaluator
 

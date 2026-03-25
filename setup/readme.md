@@ -20,16 +20,16 @@ Steps:
 - Go to the docker directory and build the docker image.
     ```
     cd AutoCattlogger/setup/docker/
-    docker build -t AutoCattloggerImg:<tag> . 
+    docker build -t autocattloggerimg:<tag> . 
     
     #replace <tag> with any tag you wish to provide, remove it with the preceeding colon
-    # You can also replace the name AutoCattloggerImg with any name you wish to provide.
+    # You can also replace the name autocattloggerimg with any name you wish to provide.
     # If you get an error saying that you do not have permission to run the above command, try it with sudo.
     ```
 - Verify that the image is built with `sudo docker image ls` command. The image must be listed in the output.
 - Run the image to get the docker container. Run it in interactive mode using the following command.
     ```
-    sudo docker run -it --gpus all -d -p 5000:5000 -v ../:/AutoCattlogger/ --shm-size=64gb AutoCattloggerImg
+    sudo docker run -it --gpus all -d -p 5000:5000 -v ../../:/AutoCattlogger/ --shm-size=64gb autocattloggerimg
     ```
     You can change the shared memory size 'shm-size' depending on the amount of RAM available on your system. The default of 64MB is too less to run model training.
 
@@ -59,7 +59,7 @@ Steps:
 
 - To quit the container, run the `exit` command.
 - To stop the container, run `sudo docker stop <container-id>`. Verify by running `sudo docker ps`.
-- To delete the container image altogether, run `sudo docker rmi -f AutoCattloggerImg`. Verify by running `sudo docker image ls`.
+- To delete the container image altogether, run `sudo docker rmi -f autocattloggerimg`. Verify by running `sudo docker image ls`.
 
 
 ## Conda environment

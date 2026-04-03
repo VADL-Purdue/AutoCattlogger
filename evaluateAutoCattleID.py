@@ -50,7 +50,7 @@ def evaluateACID(cattlogDict_train=None, trainTracksPath='', evalTracksPath='', 
     :return: instanceAcc, nInstances, trackAcc, nCowTracks
     '''
 
-
+    os.makedirs(outDir, exist_ok=True)
 
     #Setup Logger
     #Remove all handlers associated with the root logger object.

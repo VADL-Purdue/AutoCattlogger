@@ -68,7 +68,9 @@ This repository has code built on ideas presented in the following papers:
          - The cattlogs get generated even without this option. But this is needed for the recognition system to work -- so that it can associate a trackID with a real-world CowID.
 - Evaluation: Evaluate AutoCattleID (ACID) using the tracks from the two sets of videos. You can also use the training set's cattlog if you have it already.
     ```
-    python evaluateAutoCattleID.py -t ./outputs/temp/tracks_withGTLabels.pkl -e ./outputs/temp/tracks_withGTLabels.pkl -o ./outputs/ACID_outputs/ -l '_trial'
+    python evaluateAutoCattleID.py -t ./outputs/ac_outputs_1/tracks_withGTLabels.pkl -e ./outputs/ac_outputs_2/tracks_withGTLabels.pkl -o ./outputs/ACID_outputs/ -l '_1on2'
+    
+    python evaluateAutoCattleID.py -e ./outputs/ac_outputs_1/tracks_withGTLabels.pkl -t ./outputs/ac_outputs_2/tracks_withGTLabels.pkl -o ./outputs/ACID_outputs/ -l '_2on1'
     ```
     - Use the help flag to list all available options.
         ```

@@ -55,11 +55,16 @@ def getFilteredCattlog(tracksList, trackPtsFilterFn=None, **kwargs):
         # Final bit vector = bit-wise statistical mode of all bit vectors. => majority vote for white or black at each pixel block.
 
         bitVecList = [x['bitVecStr'] for x in trackPoints if x['bitVecStr'] != ''] #all trackPoints should have a bitVecStr now, but checking just in case no filtering is performed
+
+        # convert to list of list of ints from list of strings - for the stats.mode function
+        bitVecList = [[int(x) for x in bv] for bv in bitVecList] # Added this line because scipy's stats.mode fn changed its processing type to numbers only
         modeBitVec = stats.mode(bitVecList).mode #has .counts with the counts of each entry
 
         #if printDebugInfoToScreen: print(f"ModeBitVec = {modeBitVec}")
 
-        finalBitVecStr = ''.join(modeBitVec[0].tolist()) #saving bit vector as a string of bits
+        # finalBitVecStr = ''.join(modeBitVec[0].tolist()) #saving bit vector as a string of bits
+        # Modified this line because scipy's stats.mode fn changed its processing type to numbers only
+        finalBitVecStr = ''.join([str(x) for x in modeBitVec]) #saving bit vector as a string of bits 
         
         #track['autoCattBitVecStr'] = finalBitVecStr #need not save it in the track
 

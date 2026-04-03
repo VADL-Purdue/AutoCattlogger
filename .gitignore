@@ -35,3 +35,8 @@ outputs/*
 #yaml/yml files
 *.yml
 *.yaml
+
+# tarfiles or compressed files
+*.tar
+*.gz
+*.zip

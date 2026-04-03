@@ -56,9 +56,12 @@ def getFilteredCattlog(tracksList, trackPtsFilterFn=None, **kwargs):
 
         bitVecList = [x['bitVecStr'] for x in trackPoints if x['bitVecStr'] != ''] #all trackPoints should have a bitVecStr now, but checking just in case no filtering is performed
 
+        # pdb.set_trace()
+
         # convert to list of list of ints from list of strings - for the stats.mode function
         bitVecList = [[int(x) for x in bv] for bv in bitVecList] # Added this line because scipy's stats.mode fn changed its processing type to numbers only
         modeBitVec = stats.mode(bitVecList).mode #has .counts with the counts of each entry
+        modeBitVec = modeBitVec.squeeze() # To handle scipy version changes. Docker img has scipy 1.13.1 which works fine. Conda env has scipy 1.10.0 or 1.7.3 (old), and return a 2D array that needs to be squeezed.
 
         #if printDebugInfoToScreen: print(f"ModeBitVec = {modeBitVec}")
 

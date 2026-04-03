@@ -143,7 +143,7 @@ class ACID_InferenceEngine(AutoCattloger):
         # Verified. The self.getBitVectorsFromFrame() fn takes checks the self.colorCorrectionOn flag and does color correction if needed.
         # This flag can be set/unset in the AutoCattlogger config file.
         
-        bitVecStrList, kpCorrectionMethodList, cowAutoCatOutImg, cropList, rotatedBBOX_img = self.getBitVectorsFromFrame(frame, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, nKPDetectionCounts=nKPDetectionCounts, frameCount=0, gt_label=None, doNotComputeCowAutoCatOutImg=True)
+        bitVecStrList, kpCorrectionMethodList, cowAutoCatOutImg, cropList, rotatedBBOX_img = self.getBitVectorsFromFrame(frame, countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, nKPDetectionCounts=nKPDetectionCounts, frameCount=0, gt_label=None, doNotComputeCowAutoCatOutImg=True)
 
         # infer cow IDs from bit vectors for each cow detected in the frame, then overlay and display them
         predCowIDs = []
@@ -363,7 +363,7 @@ class ACID_InferenceEngine(AutoCattloger):
             #    img_prediction_op = self.predictOnImage_QR(frame=frame, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, _nKPDetectionCounts=_nKPDetectionCounts, frameCount=frameCount, gt_label=gt_label)
             # else:
 
-            cattlog_output = self.getBitVectorsFromFrame(frame=frame, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, _nKPDetectionCounts=_nKPDetectionCounts, frameCount=frameCount, gt_label=None, doNotComputeCowAutoCatOutImg=True) #force gt_label to be None
+            cattlog_output = self.getBitVectorsFromFrame(frame=frame, countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, nKPDetectionCounts=_nKPDetectionCounts, frameCount=frameCount, gt_label=None, doNotComputeCowAutoCatOutImg=True) #force gt_label to be None
             currentTrackPoints = [] #reinitialization
 
             if cattlog_output is not None: #it is none when there is now cow detected in the scene
@@ -446,6 +446,8 @@ class ACID_InferenceEngine(AutoCattloger):
                         track['trackPoints'][-1]['instLvlPred'] = predicted_cowID
 
                         #update the pred_countsDict
+                        if 'pred_countsDict' not in track:
+                            track['pred_countsDict'] = {}
                         track['pred_countsDict'][predicted_cowID] = track['pred_countsDict'].get(predicted_cowID, 0) + 1
 
                         #update the track level prediction - cowID with the maximum counts
@@ -677,7 +679,7 @@ class ACID_InferenceEngine(AutoCattloger):
             #cowBitVecStr = self.cattlogFromCutVideo(vidPath=vidPath, cv2VideoWriterObj=out, frameFreq=frameFreq, outRootDir=videosOutDir, frame_width=1920, frame_height=1080, gt_label=gt_label, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, kpRules_maxPossibleConf=kpRules_maxPossibleConf, _nKPDetectionCounts=_nKPDetectionCounts, standalone=False)
             #bitVecCattlogDict[gt_label] = {'blk16':cowBitVecStr}
 
-            openTracks, closedTracks, trackID = self.inferFromVideo_multiInstances(vidPath, cv2VideoWriterObj=None, frameFreq = frameFreq, outRootDir=videosOutDir, frame_width = frame_width, frame_height = frame_height, gt_label=None, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, kpRules_maxPossibleConf=kpRules_maxPossibleConf, _nKPDetectionCounts=_nKPDetectionCounts, openTracks=openTracks, closedTracks=closedTracks, startingTrackID=trackID, noDetFramesLimit=6, standalone=False)
+            openTracks, closedTracks, trackID = self.inferFromVideo_multiInstances(vidPath, cv2VideoWriterObj=None, frameFreq = frameFreq, outRootDir=videosOutDir, frame_width = frame_width, frame_height = frame_height, _countsDict=_countsDict, kpRulesPassCounts=kpRulesPassCounts, kpRules_maxPossibleConf=kpRules_maxPossibleConf, _nKPDetectionCounts=_nKPDetectionCounts, openTracks=openTracks, closedTracks=closedTracks, startingTrackID=trackID, noDetFramesLimit=6, standalone=False)
 
 
         # Using Joblib for parallel evaluation

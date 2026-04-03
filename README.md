@@ -84,15 +84,17 @@ This repository has code built on ideas presented in the following papers:
     - You can run inference on sigle image/frame, single video, or a directory with top-view videos.
         - Running inference on a single image. Example:
             ```
-            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/temp/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/temp/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ frame -i ./data/sampleImages/sample1.png -d
+            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/ac_outputs_1/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/ac_outputs_1/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ frame -i ./data/sampleImages/sampleImg_5953_fromSampleVideos2.png -d
             ```
+            *Note:* The -d option to display the inference image in a window might not work if you run it in the docker container. However, it does save it in the specified location and can then be viewed using an image viewer.
+
         - Running inference on a video. Example:
             ```
-            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/temp/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/temp/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ video -i ./data/sampleCutVideos/cam24_2022-06-08_05-29-20_6131_76219_76700.avi -F 1
+            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/ac_outputs_1/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/ac_outputs_1/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ video -i ./data/sampleVideos2/cam24_2022-06-09_08-29-52_6079_75231_75573.avi
             ```
         - Running inference on a directory of (top-view) videos. Example:
             ```
-            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/temp/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/temp/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ videoDir -i ./data/sampleCutVideos/ -F 1
+            python inferID.py -C ./configs/autoCattlogger_configs/autoCattlogger_example_config.yaml --cattlogDirPath ./outputs/ac_outputs_1/autoCattlogV2_sampleCrops_withGTLabels/ -t ./outputs/ac_outputs_1/tracks_withGTLabels.pkl --filterFnName trackPtsFilter_byProximityOfRBboxToFrameCenter -o ./outputs/ACID_inference_outputs/ videoDir -i ./data/sampleVideos2/ -F 1
             ```
             - You can also make this save cattlog outputs while running inference using the --functionAsAutoCattlogger flag. This can be useful if you are looking to clean up ground truth annotations while adding new cows to your database (cattlog).
     - To get a list of options, use the --help flag.

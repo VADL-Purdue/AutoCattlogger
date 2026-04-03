@@ -43,7 +43,7 @@ RUN pip install --no-cache-dir -e .
 #####################################
 # For autocattlogger
 RUN python -m pip install scikit-image==0.19.1
-RUN python -m pip install shapely
+RUN python -m pip install shapely==1.8.1.post1 # need this specific shapely version to avoid incompatible input type error while running ACID_inferenceEngine.py (Shapely 2.0 and above result in errors)
 RUN python -m pip install ndicts
 RUN python -m pip install distinctipy
 RUN python -m pip install joblib
@@ -62,7 +62,6 @@ RUN python -m pip install opencv-python==4.11.0.86
 RUN python -m pip install mmdet==3.2.0
 RUN python -m pip install mmcv==2.1.0
 
-RUN python -m pip install shapely==1.8.1.post1 # need to downdgrade shaply to avoid incompatible input type error while running ACID_inferenceEngine.py
 
 # Add lines to clone AutoCattlogger public repo and to change workdir to the AutoCattlogger folder
 

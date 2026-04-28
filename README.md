@@ -10,7 +10,8 @@ Owner: Video Analytics for Daily Living (VADL) Laboratory, Elmore Family Schoool
 
 # About
 
-This repository has code to run the AutoCattlogger, AutoCattleID, and some supplementary tools that could be useful for other cattle identification/analytics systems.
+This repository has code to run the AutoCattlogger, AutoCattleID, and some supplementary tools that could be useful for other cattle identification/analytics systems. 
+Here is a [three-minute presentation video](www.youtube.com/watch?v=x7scyiUHK7g) to understand the idea behind AutoCattlogger for non-specialist audience.
 
 ![Example output from the AutoCattlogger.](./docs/assets/autoCattlogger_example_6123.gif)
 
